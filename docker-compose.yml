@@ -1,0 +1,8 @@
+version: "2"
+services:
+  opencv:
+    build: ./
+    privileged: true
+    command: python3 -c "import cv2; print('You have now OpenCV {} installed!'.format(cv2.__version__))"
+    devices:
+      - "/dev/video0:/dev/video0"
